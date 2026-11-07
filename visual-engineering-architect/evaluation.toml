@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "visual-engineering-architect"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Choose a renderer for a large graph"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Compare static and interactive visuals"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Plan editable diagrams and chart exports"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Make this simple Mermaid flowchart"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Change a Chart.js legend color"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Repair one SVG path"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Select process, data chart and dependency graph frameworks"
+expected = "Justify Mermaid, Chart.js or Graphviz against host/editability constraints"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Render DOT source and inspect its export"
+expected = "Preserve nodes/edges; verify readable output and text alternative"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Renderer is unavailable"
+expected = "Keep editable source and disclose pending render or use an acceptable alternative"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Coordinate SVG and Chart.js components"
+expected = "Delegate implementation to preserved specialists and retain sources"
+status = "not-run"

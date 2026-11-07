@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "rust-tauri-app-architect"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Design Tauri frontend-to-Rust IPC"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Debug Tauri shared state"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Add scoped native access to a Tauri app"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Teach Rust lifetimes generally"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Generate only an MSI"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Build a browser-only React app"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Run a v2 command from the frontend"
+expected = "Registration, naming, serialization and error UI work in a native app"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Build scoped file service and concurrent state"
+expected = "Allowed operations work; escapes denied; cancellation and OS paths tested"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Plugin permission or native prerequisite is missing"
+expected = "Diagnose exact scope/version and report native checks pending"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Hand application to packaging"
+expected = "App owns runtime; release skill owns artifacts"
+status = "not-run"

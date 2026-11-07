@@ -1,0 +1,769 @@
+{
+  "scope": "Local tool smoke tests; not agent behavior evaluation",
+  "results": [
+    {
+      "name": "media",
+      "skill": "ffmpeg-media-engineer",
+      "status": "pass",
+      "detail": {
+        "streams": 2,
+        "metadata": "Skill Fixture",
+        "scaled": [
+          80,
+          60
+        ],
+        "decoded": true,
+        "unsupported_encoder_rejected": true,
+        "hardware": "not exercised",
+        "perceptual_review": "not performed"
+      },
+      "seconds": 1.382,
+      "steps": [
+        {
+          "argv": [
+            "ffmpeg",
+            "-n",
+            "-v",
+            "error",
+            "-f",
+            "lavfi",
+            "-i",
+            "testsrc2=size=160x120:rate=10",
+            "-f",
+            "lavfi",
+            "-i",
+            "sine=frequency=440:sample_rate=48000",
+            "-t",
+            "1",
+            "-map",
+            "0:v:0",
+            "-map",
+            "1:a:0",
+            "-c:v",
+            "ffv1",
+            "-c:a",
+            "pcm_s16le",
+            "-metadata",
+            "title=Skill Fixture",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\source [x] & space.mkv"
+          ],
+          "exit": 0,
+          "seconds": 0.122,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_format",
+            "-show_streams",
+            "-of",
+            "json",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\source [x] & space.mkv"
+          ],
+          "exit": 0,
+          "seconds": 0.583,
+          "stdout": "{\n    \"streams\": [\n        {\n            \"index\": 0,\n            \"codec_name\": \"ffv1\",\n            \"codec_long_name\": \"FFmpeg video codec #1\",\n            \"codec_type\": \"video\",\n            \"codec_tag_string\": \"[0][0][0][0]\",\n            \"codec_tag\": \"0x0000\",\n            \"width\": 160,\n            \"height\": 120,\n            \"coded_width\": 160,\n            \"coded_height\": 120,\n            \"has_b_frames\": 0,\n            \"sample_aspect_ratio\": \"1:1\",\n            \"display_aspect_ratio\": \"4:3\",\n            \"pix_fmt\": \"yuv420p\",\n            \"level\": -99,\n            \"color_range\": \"tv\",\n            \"field_order\": \"progressive\",\n            \"r_frame_rate\": \"10/1\",\n            \"avg_frame_rate\": \"10/1\",\n            \"time_base\": \"1/1000\",\n            \"start_pts\": 0,\n            \"start_time\": \"0.000000\",\n            \"bits_per_raw_sample\": \"8\",\n            \"extradata_size\": 42,\n            \"disposition\": {\n                \"default\": 0,\n                \"dub\": 0,\n                \"original\": 0,\n                \"comment\": 0,\n                \"lyrics\": 0,\n                \"karaoke\": 0,\n                \"forced\": 0,\n                \"hearing_impaired\": 0,\n                \"visual_impaired\": 0,\n                \"clean_effects\": 0,\n                \"attached_pic\": 0,\n                \"timed_thumbnails\": 0,\n                \"non_diegetic\": 0,\n                \"captions\": 0,\n                \"descriptions\": 0,\n                \"metadata\": 0,\n                \"dependent\": 0,\n                \"still_image\": 0,\n                \"multilayer\": 0\n            },\n            \"tags\": {\n                \"ENCODER\": \"Lavc63.1.102 ffv1\",\n                \"DURATION\": \"00:00:01.000000000\"\n            }\n        },\n        {\n            \"index\": 1,\n            \"codec_name\": \"pcm_s16le\",\n            \"codec_long_name\": \"PCM signed 16-bit little-endian\",\n            \"codec_type\": \"audio\",\n            \"codec_tag_string\": \"[0][0][0][0]\",\n            \"codec_tag\": \"0x0000\",\n            \"sample_fmt\": \"s16\",\n            \"sample_rate\": \"48000\",\n            \"channels\": 1,\n            \"bits_per_sample\": 16,\n            \"initial_padding\": 0,\n            \"r_frame_rate\": \"0/0\",\n            \"avg_frame_rate\": \"0/0\",\n            \"time_base\": \"1/1000\",\n            \"start_pts\": 0,\n            \"start_time\": \"0.000000\",\n            \"bit_rate\": \"768000\",\n            \"disposition\": {\n                \"default\": 0,\n                \"dub\": 0,\n                \"original\": 0,\n                \"comment\": 0,\n                \"lyrics\": 0,\n                \"karaoke\": 0,\n                \"forced\": 0,\n                \"hearing_impaired\": 0,\n                \"visual_impaired\": 0,\n                \"clean_effects\": 0,\n                \"attached_pic\": 0,\n                \"timed_thumbnails\": 0,\n                \"non_diegetic\": 0,\n                \"captions\": 0,\n                \"descriptions\": 0,\n                \"metadata\": 0,\n                \"dependent\": 0,\n                \"still_image\": 0,\n                \"multilayer\": 0\n            },\n            \"tags\": {\n                \"ENCODER\": \"Lavc63.1.102 pcm_s16le\",\n                \"DURATION\": \"00:00:01.000000000\"\n            }\n        }\n    ],\n    \"format\": {\n        \"filename\": \"C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\agent-skill-fixtures-2j3llopq\\\\media\\\\source [x] & space.mkv\",\n        \"nb_streams\": 2,\n        \"nb_programs\": 0,\n        \"nb_stream_groups\": 0,\n        \"format_name\": \"matroska,webm\",\n        \"format_long_name\": \"Matroska / WebM\",\n        \"start_time\": \"0.000000\",\n        \"duration\": \"1.000000\",\n        \"size\": \"133860\",\n        \"bit_rate\": \"1070880\",\n        \"probe_score\": 100,\n        \"tags\": {\n            \"title\": \"Skill Fixture\",\n            \"ENCODER\": \"Lavf63.1.102\"\n        }\n    }\n}\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffmpeg",
+            "-n",
+            "-v",
+            "error",
+            "-i",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\source [x] & space.mkv",
+            "-map",
+            "0:v:0",
+            "-map",
+            "0:a?",
+            "-c",
+            "copy",
+            "-map_metadata",
+            "0",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\copy.mkv"
+          ],
+          "exit": 0,
+          "seconds": 0.053,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_format",
+            "-show_streams",
+            "-of",
+            "json",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\copy.mkv"
+          ],
+          "exit": 0,
+          "seconds": 0.031,
+          "stdout": "{\n    \"streams\": [\n        {\n            \"index\": 0,\n            \"codec_name\": \"ffv1\",\n            \"codec_long_name\": \"FFmpeg video codec #1\",\n            \"codec_type\": \"video\",\n            \"codec_tag_string\": \"[0][0][0][0]\",\n            \"codec_tag\": \"0x0000\",\n            \"width\": 160,\n            \"height\": 120,\n            \"coded_width\": 160,\n            \"coded_height\": 120,\n            \"has_b_frames\": 0,\n            \"sample_aspect_ratio\": \"1:1\",\n            \"display_aspect_ratio\": \"4:3\",\n            \"pix_fmt\": \"yuv420p\",\n            \"level\": -99,\n            \"color_range\": \"tv\",\n            \"field_order\": \"progressive\",\n            \"r_frame_rate\": \"10/1\",\n            \"avg_frame_rate\": \"10/1\",\n            \"time_base\": \"1/1000\",\n            \"start_pts\": 0,\n            \"start_time\": \"0.000000\",\n            \"bits_per_raw_sample\": \"8\",\n            \"extradata_size\": 42,\n            \"disposition\": {\n                \"default\": 0,\n                \"dub\": 0,\n                \"original\": 0,\n                \"comment\": 0,\n                \"lyrics\": 0,\n                \"karaoke\": 0,\n                \"forced\": 0,\n                \"hearing_impaired\": 0,\n                \"visual_impaired\": 0,\n                \"clean_effects\": 0,\n                \"attached_pic\": 0,\n                \"timed_thumbnails\": 0,\n                \"non_diegetic\": 0,\n                \"captions\": 0,\n                \"descriptions\": 0,\n                \"metadata\": 0,\n                \"dependent\": 0,\n                \"still_image\": 0,\n                \"multilayer\": 0\n            },\n            \"tags\": {\n                \"ENCODER\": \"Lavc63.1.102 ffv1\",\n                \"DURATION\": \"00:00:01.000000000\"\n            }\n        },\n        {\n            \"index\": 1,\n            \"codec_name\": \"pcm_s16le\",\n            \"codec_long_name\": \"PCM signed 16-bit little-endian\",\n            \"codec_type\": \"audio\",\n            \"codec_tag_string\": \"[0][0][0][0]\",\n            \"codec_tag\": \"0x0000\",\n            \"sample_fmt\": \"s16\",\n            \"sample_rate\": \"48000\",\n            \"channels\": 1,\n            \"bits_per_sample\": 16,\n            \"initial_padding\": 0,\n            \"r_frame_rate\": \"0/0\",\n            \"avg_frame_rate\": \"0/0\",\n            \"time_base\": \"1/1000\",\n            \"start_pts\": 0,\n            \"start_time\": \"0.000000\",\n            \"bit_rate\": \"768000\",\n            \"disposition\": {\n                \"default\": 0,\n                \"dub\": 0,\n                \"original\": 0,\n                \"comment\": 0,\n                \"lyrics\": 0,\n                \"karaoke\": 0,\n                \"forced\": 0,\n                \"hearing_impaired\": 0,\n                \"visual_impaired\": 0,\n                \"clean_effects\": 0,\n                \"attached_pic\": 0,\n                \"timed_thumbnails\": 0,\n                \"non_diegetic\": 0,\n                \"captions\": 0,\n                \"descriptions\": 0,\n                \"metadata\": 0,\n                \"dependent\": 0,\n                \"still_image\": 0,\n                \"multilayer\": 0\n            },\n            \"tags\": {\n                \"ENCODER\": \"Lavc63.1.102 pcm_s16le\",\n                \"DURATION\": \"00:00:00.999000000\"\n            }\n        }\n    ],\n    \"format\": {\n        \"filename\": \"C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\agent-skill-fixtures-2j3llopq\\\\media\\\\copy.mkv\",\n        \"nb_streams\": 2,\n        \"nb_programs\": 0,\n        \"nb_stream_groups\": 0,\n        \"format_name\": \"matroska,webm\",\n        \"format_long_name\": \"Matroska / WebM\",\n        \"start_time\": \"0.000000\",\n        \"duration\": \"1.000000\",\n        \"size\": \"133860\",\n        \"bit_rate\": \"1070880\",\n        \"probe_score\": 100,\n        \"tags\": {\n            \"title\": \"Skill Fixture\",\n            \"ENCODER\": \"Lavf63.1.102\"\n        }\n    }\n}\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffmpeg",
+            "-n",
+            "-v",
+            "error",
+            "-i",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\source [x] & space.mkv",
+            "-filter_complex",
+            "[0:v:0]scale=80:60[v]",
+            "-map",
+            "[v]",
+            "-map",
+            "0:a:0",
+            "-c:v",
+            "libx264",
+            "-pix_fmt",
+            "yuv420p",
+            "-crf",
+            "20",
+            "-c:a",
+            "aac",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\scaled.mp4"
+          ],
+          "exit": 0,
+          "seconds": 0.086,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_format",
+            "-show_streams",
+            "-of",
+            "json",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\scaled.mp4"
+          ],
+          "exit": 0,
+          "seconds": 0.055,
+          "stdout": "{\n    \"streams\": [\n        {\n            \"index\": 0,\n            \"codec_name\": \"h264\",\n            \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\n            \"profile\": \"High\",\n            \"codec_type\": \"video\",\n            \"codec_tag_string\": \"avc1\",\n            \"codec_tag\": \"0x31637661\",\n            \"mime_codec_string\": \"avc1.64000a\",\n            \"width\": 80,\n            \"height\": 60,\n            \"coded_width\": 80,\n            \"coded_height\": 60,\n            \"has_b_frames\": 2,\n            \"sample_aspect_ratio\": \"1:1\",\n            \"display_aspect_ratio\": \"4:3\",\n            \"pix_fmt\": \"yuv420p\",\n            \"level\": 10,\n            \"chroma_location\": \"left\",\n            \"field_order\": \"progressive\",\n            \"is_avc\": \"true\",\n            \"nal_length_size\": \"4\",\n            \"id\": \"0x1\",\n            \"r_frame_rate\": \"10/1\",\n            \"avg_frame_rate\": \"10/1\",\n            \"time_base\": \"1/10240\",\n            \"start_pts\": 0,\n            \"start_time\": \"0.000000\",\n            \"duration_ts\": 10240,\n            \"duration\": \"1.000000\",\n            \"bit_rate\": \"57520\",\n            \"bits_per_raw_sample\": \"8\",\n            \"nb_frames\": \"10\",\n            \"extradata_size\": 46,\n            \"disposition\": {\n                \"default\": 1,\n                \"dub\": 0,\n                \"original\": 0,\n                \"comment\": 0,\n                \"lyrics\": 0,\n                \"karaoke\": 0,\n                \"forced\": 0,\n                \"hearing_impaired\": 0,\n                \"visual_impaired\": 0,\n                \"clean_effects\": 0,\n                \"attached_pic\": 0,\n                \"timed_thumbnails\": 0,\n                \"non_diegetic\": 0,\n                \"captions\": 0,\n                \"descriptions\": 0,\n                \"metadata\": 0,\n                \"dependent\": 0,\n                \"still_image\": 0,\n                \"multilayer\": 0\n            },\n            \"tags\": {\n                \"language\": \"und\",\n                \"handler_name\": \"VideoHandler\",\n                \"encoder\": \"Lavc63.1.102 libx264\"\n            }\n        },\n        {\n            \"index\": 1,\n            \"codec_name\": \"aac\",\n            \"codec_long_name\": \"AAC (Advanced Audio Coding)\",\n            \"profile\": \"LC\",\n            \"codec_type\": \"audio\",\n            \"codec_tag_string\": \"mp4a\",\n            \"codec_tag\": \"0x6134706d\",\n            \"mime_codec_string\": \"mp4a.40.2\",\n            \"sample_fmt\": \"fltp\",\n            \"sample_rate\": \"48000\",\n            \"channels\": 1,\n            \"channel_layout\": \"mono\",\n            \"bits_per_sample\": 0,\n            \"initial_padding\": 1024,\n            \"id\": \"0x2\",\n            \"r_frame_rate\": \"0/0\",\n            \"avg_frame_rate\": \"0/0\",\n            \"time_base\": \"1/48000\",\n            \"start_pts\": 0,\n            \"start_time\": \"0.000000\",\n            \"duration_ts\": 48000,\n            \"duration\": \"1.000000\",\n            \"bit_rate\": \"70496\",\n            \"nb_frames\": \"48\",\n            \"extradata_size\": 5,\n            \"disposition\": {\n                \"default\": 1,\n                \"dub\": 0,\n                \"original\": 0,\n                \"comment\": 0,\n                \"lyrics\": 0,\n                \"karaoke\": 0,\n                \"forced\": 0,\n                \"hearing_impaired\": 0,\n                \"visual_impaired\": 0,\n                \"clean_effects\": 0,\n                \"attached_pic\": 0,\n                \"timed_thumbnails\": 0,\n                \"non_diegetic\": 0,\n                \"captions\": 0,\n                \"descriptions\": 0,\n                \"metadata\": 0,\n                \"dependent\": 0,\n                \"still_image\": 0,\n                \"multilayer\": 0\n            },\n            \"tags\": {\n                \"language\": \"und\",\n                \"handler_name\": \"SoundHandler\"\n            }\n        }\n    ],\n    \"format\": {\n        \"filename\": \"C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\agent-skill-fixtures-2j3llopq\\\\media\\\\scaled.mp4\",\n        \"nb_streams\": 2,\n        \"nb_programs\": 0,\n        \"nb_stream_groups\": 0,\n        \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n        \"format_long_name\": \"QuickTime / MOV\",\n        \"start_time\": \"0.000000\",\n        \"duration\": \"1.000000\",\n        \"size\": \"18078\",\n        \"bit_rate\": \"144624\",\n        \"probe_score\": 100,\n        \"tags\": {\n            \"major_brand\": \"isom\",\n            \"minor_version\": \"512\",\n            \"compatible_brands\": \"isomiso2avc1mp41\",\n            \"title\": \"Skill Fixture\",\n            \"encoder\": \"Lavf63.1.102\"\n        }\n    }\n}\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffmpeg",
+            "-v",
+            "error",
+            "-i",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\scaled.mp4",
+            "-map",
+            "0:v?",
+            "-map",
+            "0:a?",
+            "-f",
+            "null",
+            "-"
+          ],
+          "exit": 0,
+          "seconds": 0.093,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffmpeg",
+            "-n",
+            "-v",
+            "error",
+            "-i",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\source [x] & space.mkv",
+            "-vn",
+            "-c:a",
+            "flac",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\audio.flac"
+          ],
+          "exit": 0,
+          "seconds": 0.049,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_format",
+            "-show_streams",
+            "-of",
+            "json",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\audio.flac"
+          ],
+          "exit": 0,
+          "seconds": 0.035,
+          "stdout": "{\n    \"streams\": [\n        {\n            \"index\": 0,\n            \"codec_name\": \"flac\",\n            \"codec_long_name\": \"FLAC (Free Lossless Audio Codec)\",\n            \"codec_type\": \"audio\",\n            \"codec_tag_string\": \"[0][0][0][0]\",\n            \"codec_tag\": \"0x0000\",\n            \"mime_codec_string\": \"flac\",\n            \"sample_fmt\": \"s16\",\n            \"sample_rate\": \"48000\",\n            \"channels\": 1,\n            \"channel_layout\": \"mono\",\n            \"bits_per_sample\": 0,\n            \"initial_padding\": 0,\n            \"r_frame_rate\": \"0/0\",\n            \"avg_frame_rate\": \"0/0\",\n            \"time_base\": \"1/48000\",\n            \"start_pts\": 0,\n            \"start_time\": \"0.000000\",\n            \"duration_ts\": 48000,\n            \"duration\": \"1.000000\",\n            \"bits_per_raw_sample\": \"16\",\n            \"extradata_size\": 34,\n            \"disposition\": {\n                \"default\": 0,\n                \"dub\": 0,\n                \"original\": 0,\n                \"comment\": 0,\n                \"lyrics\": 0,\n                \"karaoke\": 0,\n                \"forced\": 0,\n                \"hearing_impaired\": 0,\n                \"visual_impaired\": 0,\n                \"clean_effects\": 0,\n                \"attached_pic\": 0,\n                \"timed_thumbnails\": 0,\n                \"non_diegetic\": 0,\n                \"captions\": 0,\n                \"descriptions\": 0,\n                \"metadata\": 0,\n                \"dependent\": 0,\n                \"still_image\": 0,\n                \"multilayer\": 0\n            }\n        }\n    ],\n    \"format\": {\n        \"filename\": \"C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\agent-skill-fixtures-2j3llopq\\\\media\\\\audio.flac\",\n        \"nb_streams\": 1,\n        \"nb_programs\": 0,\n        \"nb_stream_groups\": 0,\n        \"format_name\": \"flac\",\n        \"format_long_name\": \"raw FLAC\",\n        \"start_time\": \"0.000000\",\n        \"duration\": \"1.000000\",\n        \"size\": \"25279\",\n        \"bit_rate\": \"202232\",\n        \"probe_score\": 100,\n        \"tags\": {\n            \"title\": \"Skill Fixture\",\n            \"encoder\": \"Lavf63.1.102\"\n        }\n    }\n}\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffmpeg",
+            "-n",
+            "-v",
+            "error",
+            "-i",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\source [x] & space.mkv",
+            "-an",
+            "-c:v",
+            "no_such_encoder_fixture",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\bad.mkv"
+          ],
+          "exit": 3165764104,
+          "seconds": 0.034,
+          "stdout": "",
+          "stderr": "[vost#0:0 @ 0000024142508600] Unknown encoder 'no_such_encoder_fixture'\n[vost#0:0 @ 0000024142508600] Error selecting an encoder\nError opening output file C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\media\\bad.mkv.\nError opening output files: Encoder not found\n"
+        },
+        {
+          "argv": [
+            "ffmpeg",
+            "-hide_banner",
+            "-h",
+            "filter=scale"
+          ],
+          "exit": 0,
+          "seconds": 0.034,
+          "stdout": "   gaussian        5            E..V....... 2-tap gaussian approximation\n     sinc            6            E..V....... unwindowed sinc\n     lanczos         7            E..V....... 3-tap sinc/sinc\n     spline          8            E..V....... 2-tap cubic BC spline\n  -param0            <double>     E..V....... scaler param 0 (from INT_MIN to INT_MAX) (default 123456)\n  -param1            <double>     E..V....... scaler param 1 (from INT_MIN to INT_MAX) (default 123456)\n  -srcw              <int>        E..V....... source width (from 1 to INT_MAX) (default 16)\n  -srch              <int>        E..V....... source height (from 1 to INT_MAX) (default 16)\n  -dstw              <int>        E..V....... destination width (from 1 to INT_MAX) (default 16)\n  -dsth              <int>        E..V....... destination height (from 1 to INT_MAX) (default 16)\n  -src_format        <pix_fmt>    E..V....... source format (default yuv420p)\n  -dst_format        <pix_fmt>    E..V....... destination format (default yuv420p)\n  -src_range         <boolean>    E..V....... source is full range (default false)\n  -dst_range         <boolean>    E..V....... destination is full range (default false)\n  -gamma             <boolean>    E..V....... gamma correct scaling (default false)\n  -src_v_chr_pos     <int>        E..V....... source vertical chroma position in luma grid/256 (from -513 to 1024) (default -513)\n  -src_h_chr_pos     <int>        E..V....... source horizontal chroma position in luma grid/256 (from -513 to 1024) (default -513)\n  -dst_v_chr_pos     <int>        E..V....... destination vertical chroma position in luma grid/256 (from -513 to 1024) (default -513)\n  -dst_h_chr_pos     <int>        E..V....... destination horizontal chroma position in luma grid/256 (from -513 to 1024) (default -513)\n  -sws_dither        <int>        E..V....... set dithering algorithm (from 0 to 5) (default auto)\n     auto            1            E..V....... automatic selection\n     none            0            E..V....... no dithering\n     bayer           2            E..V....... ordered matrix dither\n     ed              3            E..V....... full error diffusion\n     a_dither        4            E..V....... arithmetic addition dither\n     x_dither        5            E..V....... arithmetic xor dither\n  -alphablend        <int>        E..V....... mode for alpha -> non alpha (from 0 to 2) (default none)\n     none            0            E..V....... ignore alpha\n     uniform_color   1            E..V....... blend onto a uniform color\n     checkerboard    2            E..V....... blend onto a checkerboard\n  -threads           <int>        E..V....... number of threads (from 0 to INT_MAX) (default 1)\n     auto            0            E..V....... automatic selection\n  -intent            <int>        E..V....... color mapping intent (from 0 to 3) (default relative_colorimetric)\n     perceptual      0            E..V....... perceptual tone mapping\n     relative_colorimetric 1            E..V....... relative colorimetric clipping\n     saturation      2            E..V....... saturation mapping\n     absolute_colorimetric 3            E..V....... absolute colorimetric clipping\n  -sws_backends      <flags>      E..V....... set allowed swscale backends (default 0)\n     auto                         E..V....... automatic selection\n     stable                       E..V....... All stable backends\n     unstable                     E..V....... All unstable backends\n     all                          E..V....... All available backends\n     legacy                       E..V....... legacy swscale code\n     c                            E..V....... template-based reference code\n     memcpy                       E..V....... fast path using libc memcpy\n     x86                          E..V....... x86 SIMD kernels\n     aarch64                      E..V....... AArch64 NEON kernels\n     spirv                        E..V....... Vulkan SPIR-V backend\n\nframesync AVOptions:\n   eof_action        <int>        ..FV....... Action to take when encountering EOF from secondary input  (from 0 to 2) (default repeat)\n     repeat          0            ..FV....... Repeat the previous frame.\n     endall          1            ..FV....... End both streams.\n     pass            2            ..FV....... Pass through the main input.\n   shortest          <boolean>    ..FV....... force termination when the shortest input terminates (default false)\n   repeatlast        <boolean>    ..FV....... extend last frame of secondary streams beyond EOF (default true)\n   ts_sync_mode      <int>        ..FV....... How strictly to sync streams based on secondary input timestamps (from 0 to 1) (default default)\n     default         0            ..FV....... Frame from secondary input with the nearest lower or equal timestamp to the primary input frame\n     nearest         1            ..FV....... Frame from secondary input with the absolute nearest timestamp to the primary input frame\n\n\nExiting with exit code 0\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "ffprobe",
+            "-h"
+          ],
+          "exit": 0,
+          "seconds": 0.042,
+          "stdout": "        <string>     .D.V....... Resize (width)x(height)\n\nvc1_cuvid AVOptions:\n  -deint             <int>        .D.V....... Set deinterlacing mode (from 0 to 2) (default weave)\n     weave           0            .D.V....... Weave deinterlacing (do nothing)\n     bob             1            .D.V....... Bob deinterlacing\n     adaptive        2            .D.V....... Adaptive deinterlacing\n  -gpu               <string>     .D.V....... GPU to be used for decoding\n  -surfaces          <int>        .D.V......P Maximum surfaces to be used for decoding (from -1 to INT_MAX) (default -1)\n  -drop_second_field <boolean>    .D.V....... Drop second field when deinterlacing (default false)\n  -crop              <string>     .D.V....... Crop (top)x(bottom)x(left)x(right)\n  -resize            <string>     .D.V....... Resize (width)x(height)\n\nvp8_cuvid AVOptions:\n  -deint             <int>        .D.V....... Set deinterlacing mode (from 0 to 2) (default weave)\n     weave           0            .D.V....... Weave deinterlacing (do nothing)\n     bob             1            .D.V....... Bob deinterlacing\n     adaptive        2            .D.V....... Adaptive deinterlacing\n  -gpu               <string>     .D.V....... GPU to be used for decoding\n  -surfaces          <int>        .D.V......P Maximum surfaces to be used for decoding (from -1 to INT_MAX) (default -1)\n  -drop_second_field <boolean>    .D.V....... Drop second field when deinterlacing (default false)\n  -crop              <string>     .D.V....... Crop (top)x(bottom)x(left)x(right)\n  -resize            <string>     .D.V....... Resize (width)x(height)\n\nvp8_qsv AVOptions:\n  -async_depth       <int>        .D.V....... Internal parallelization depth, the higher the value the higher the latency. (from 1 to INT_MAX) (default 4)\n  -gpu_copy          <int>        .D.V....... A GPU-accelerated copy between video and system memory (from 0 to 2) (default default)\n     default         0            .D.V.......\n     on              1            .D.V.......\n     off             2            .D.V.......\n\namf AVOptions:\n  -decoder_mode      <int>        .D.V....... Decoder mode (from -1 to 2) (default -1)\n     regular         0            .D.V....... DPB delay is based on number of reference frames + 1\n     compliant       1            .D.V....... DPB delay is based on profile - up to 16\n     low_latency     2            .D.V....... DPB delay is 0\n  -timestamp_mode    <int>        .D.V....... Timestamp mode (from -1 to 2) (default sort)\n     presentation    0            .D.V....... Preserve timestamps from input to output\n     sort            1            .D.V....... Resort PTS list\n     decode          2            .D.V....... Decode order\n  -surface_pool_size <int>        .D.V....... Number of surfaces in the decode pool (from -1 to INT_MAX) (default -1)\n  -dpb_size          <int>        .D.V....... Minimum number of surfaces for reordering (from -1 to 32) (default -1)\n  -lowlatency        <int>        .D.V....... Low latency (from -1 to 1) (default -1)\n  -smart_access_video <int>        .D.V....... Smart Access Video (from -1 to 1) (default -1)\n  -skip_transfer_sav <int>        .D.V....... Skip transfer on another GPU when SAV enabled (from -1 to 1) (default -1)\n  -copy_output       <int>        .D.V....... Copy Output (from -1 to 1) (default -1)\n\nvp9_cuvid AVOptions:\n  -deint             <int>        .D.V....... Set deinterlacing mode (from 0 to 2) (default weave)\n     weave           0            .D.V....... Weave deinterlacing (do nothing)\n     bob             1            .D.V....... Bob deinterlacing\n     adaptive        2            .D.V....... Adaptive deinterlacing\n  -gpu               <string>     .D.V....... GPU to be used for decoding\n  -surfaces          <int>        .D.V......P Maximum surfaces to be used for decoding (from -1 to INT_MAX) (default -1)\n  -drop_second_field <boolean>    .D.V....... Drop second field when deinterlacing (default false)\n  -crop              <string>     .D.V....... Crop (top)x(bottom)x(left)x(right)\n  -resize            <string>     .D.V....... Resize (width)x(height)\n\nvp9_qsv AVOptions:\n  -async_depth       <int>        .D.V....... Internal parallelization depth, the higher the value the higher the latency. (from 1 to INT_MAX) (default 4)\n  -gpu_copy          <int>        .D.V....... A GPU-accelerated copy between video and system memory (from 0 to 2) (default default)\n     default         0            .D.V.......\n     on              1            .D.V.......\n     off             2            .D.V.......\n\nvvc_qsv AVOptions:\n  -async_depth       <int>        .D.V....... Internal parallelization depth, the higher the value the higher the latency. (from 1 to INT_MAX) (default 4)\n  -gpu_copy          <int>        .D.V....... A GPU-accelerated copy between video and system memory (from 0 to 2) (default default)\n     default         0            .D.V.......\n     on              1            .D.V.......\n     off             2            .D.V.......\n\n",
+          "stderr": "ffprobe version 9.0.2-full_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers\n  built with gcc 16.2.0 (Rev3, Built by MSYS2 project)\n  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper\n  libavutil      61.  1.102 / 61.  1.102\n  libavcodec     63.  1.102 / 63.  1.102\n  libavformat    63.  1.102 / 63.  1.102\n  libavdevice    63.  1.102 / 63.  1.102\n  libavfilter    12.  1.102 / 12.  1.102\n  libswscale     10.  1.102 / 10.  1.102\n  libswresample   7.  1.102 /  7.  1.102\n"
+        }
+      ]
+    },
+    {
+      "name": "documents",
+      "skill": "pandoc-document-engineer",
+      "status": "pass",
+      "detail": {
+        "html": true,
+        "docx_structure_and_image": true,
+        "roundtrip": true,
+        "lua_template": true,
+        "asciidoc_reader": true,
+        "asciidoc_writer": true,
+        "visual_docx_review": "not performed"
+      },
+      "seconds": 1.604,
+      "steps": [
+        {
+          "argv": [
+            "pandoc",
+            "source.md",
+            "-f",
+            "markdown",
+            "-t",
+            "html5",
+            "-s",
+            "-o",
+            "page.html"
+          ],
+          "exit": 0,
+          "seconds": 1.198,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "pandoc",
+            "source.md",
+            "-f",
+            "markdown",
+            "-t",
+            "docx",
+            "-o",
+            "document.docx"
+          ],
+          "exit": 0,
+          "seconds": 0.089,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "pandoc",
+            "document.docx",
+            "-f",
+            "docx",
+            "-t",
+            "markdown",
+            "--extract-media=extracted",
+            "-o",
+            "roundtrip.md"
+          ],
+          "exit": 0,
+          "seconds": 0.055,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "pandoc",
+            "source.md",
+            "-s",
+            "--template=template.html",
+            "--lua-filter=heading.lua",
+            "-o",
+            "filtered.html"
+          ],
+          "exit": 0,
+          "seconds": 0.069,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "pandoc",
+            "--list-input-formats"
+          ],
+          "exit": 0,
+          "seconds": 0.02,
+          "stdout": "asciidoc\nbiblatex\nbibtex\nbits\ncommonmark\ncommonmark_x\ncreole\ncsljson\ncsv\ndjot\ndocbook\ndocx\ndokuwiki\nendnotexml\nepub\nfb2\nfodt\ngfm\nhaddock\nhtml\nipynb\njats\njira\njson\nlatex\nman\nmarkdown\nmarkdown_github\nmarkdown_mmd\nmarkdown_phpextra\nmarkdown_strict\nmdoc\nmediawiki\nmuse\nnative\nodt\nopml\norg\npod\npptx\nris\nrst\nrtf\nt2t\ntextile\ntikiwiki\ntsv\ntwiki\ntypst\nvimwiki\nxlsx\nxml\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "pandoc",
+            "--list-output-formats"
+          ],
+          "exit": 0,
+          "seconds": 0.02,
+          "stdout": "ansi\nasciidoc\nasciidoc_legacy\nasciidoctor\nbbcode\nbbcode_fluxbb\nbbcode_hubzilla\nbbcode_phpbb\nbbcode_steam\nbbcode_xenforo\nbeamer\nbiblatex\nbibtex\nchunkedhtml\ncommonmark\ncommonmark_x\ncontext\ncsljson\ndjot\ndocbook\ndocbook4\ndocbook5\ndocx\ndokuwiki\ndzslides\nepub\nepub2\nepub3\nfb2\nfodt\ngfm\nhaddock\nhtml\nhtml4\nhtml5\nicml\nipynb\njats\njats_archiving\njats_articleauthoring\njats_publishing\njira\njson\nlatex\nman\nmarkdown\nmarkdown_github\nmarkdown_mmd\nmarkdown_phpextra\nmarkdown_strict\nmarkua\nmediawiki\nms\nmuse\nnative\nodt\nopendocument\nopml\norg\npdf\nplain\npptx\nrevealjs\nrst\nrtf\ns5\nslideous\nslidy\nt2t\ntei\ntexinfo\ntextile\ntypst\nvimdoc\nxml\nxwiki\nzimwiki\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "name": "pdf-route",
+      "skill": "pandoc-document-engineer",
+      "status": "pass",
+      "detail": "PDF file header checked; layout/rendering not inspected",
+      "seconds": 9.15,
+      "steps": [
+        {
+          "argv": [
+            "pandoc",
+            "source.md",
+            "--pdf-engine=xelatex",
+            "-o",
+            "output.pdf"
+          ],
+          "exit": 0,
+          "seconds": 9.141,
+          "stdout": "",
+          "stderr": "[WARNING] source.md is not UTF-8 encoded: falling back to latin1.\n"
+        }
+      ]
+    },
+    {
+      "name": "images",
+      "skill": "imagemagick-imaging-engineer",
+      "status": "pass",
+      "detail": {
+        "fit": [
+          16,
+          8
+        ],
+        "crop": [
+          10,
+          8
+        ],
+        "composite_rgb": [
+          128,
+          0,
+          127
+        ],
+        "gray": "Gray",
+        "palette_colors": 5,
+        "repeated_file_hash": "b3b1d3d46d2d1a1a139940ba1c58dd0241bb9a96895a307e39d87f9f429b7767",
+        "icc": "not exercised"
+      },
+      "seconds": 0.447,
+      "steps": [
+        {
+          "argv": [
+            "magick",
+            "-size",
+            "40x20",
+            "xc:blue",
+            "base.png"
+          ],
+          "exit": 0,
+          "seconds": 0.1,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "base.png",
+            "-resize",
+            "16x16>",
+            "fit.png"
+          ],
+          "exit": 0,
+          "seconds": 0.023,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "base.png",
+            "-crop",
+            "10x8+2+3",
+            "+repage",
+            "crop.png"
+          ],
+          "exit": 0,
+          "seconds": 0.024,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "-size",
+            "40x20",
+            "xc:rgba(255,0,0,0.5)",
+            "overlay.png"
+          ],
+          "exit": 0,
+          "seconds": 0.041,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "base.png",
+            "overlay.png",
+            "-compose",
+            "Over",
+            "-composite",
+            "composite.png"
+          ],
+          "exit": 0,
+          "seconds": 0.024,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "base.png",
+            "-colorspace",
+            "Gray",
+            "gray.png"
+          ],
+          "exit": 0,
+          "seconds": 0.024,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "identify",
+            "-format",
+            "%[colorspace]",
+            "gray.png"
+          ],
+          "exit": 0,
+          "seconds": 0.025,
+          "stdout": "Gray",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "-size",
+            "40x20",
+            "gradient:red-blue",
+            "-colors",
+            "8",
+            "palette.png"
+          ],
+          "exit": 0,
+          "seconds": 0.043,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "palette.png",
+            "-format",
+            "%c",
+            "histogram:info:"
+          ],
+          "exit": 0,
+          "seconds": 0.068,
+          "stdout": "           200: (6898,0,58637) #1AF20000E50D srgb(10.5257%,0%,89.4743%)\n           200: (24144,0,41391) #5E500000A1AF srgb(36.8414%,0%,63.1586%)\n            80: (37941,0,27594) #943500006BCA srgb(57.8943%,0%,42.1057%)\n           120: (42253,0,23282) #A50D00005AF2 srgb(64.4739%,0%,35.5261%)\n           200: (58637,0,6898) #E50D00001AF2 srgb(89.4743%,0%,10.5257%)\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "base.png",
+            "-resize",
+            "20x10",
+            "-strip",
+            "-define",
+            "png:exclude-chunks=date,time",
+            "repeat-1.png"
+          ],
+          "exit": 0,
+          "seconds": 0.024,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "magick",
+            "base.png",
+            "-resize",
+            "20x10",
+            "-strip",
+            "-define",
+            "png:exclude-chunks=date,time",
+            "repeat-2.png"
+          ],
+          "exit": 0,
+          "seconds": 0.023,
+          "stdout": "",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "name": "powershell",
+      "skill": "powershell-automation-engineer",
+      "status": "fail",
+      "reason": "AssertionError: pwsh exit 1: ",
+      "seconds": 3.681,
+      "steps": [
+        {
+          "argv": [
+            "pwsh",
+            "-NoProfile",
+            "-File",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\powershell\\run.ps1",
+            "Y:\\Agent Skills\\Created\\batch-generation\\automation.Tests.ps1",
+            "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\powershell"
+          ],
+          "exit": 1,
+          "seconds": 3.68,
+          "stdout": "\n\n\n\n\nDescribing Reusable automation contracts\n [-] preserves literal paths and pipeline result cardinality 354ms\n   Expected string length 85 but was 90. Strings differ at index 15.\n   Expected: {C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\powershell\\[x].txt}\n   But was:  {C:\\Users\\Administrator\\AppData\\Local\\Temp\\agent-skill-fixtures-2j3llopq\\powershell\\[x].txt}\n   --------------------------^\n   20:         $items[2].Path | Should Be $paths[2]\n   at <ScriptBlock>, Y:\\Agent Skills\\Created\\batch-generation\\automation.Tests.ps1: line 20\n [-] rejects missing and invalid parameters 88ms\n   Expected: the expression to throw an exception\n   24:         { Get-CheckedFile -LiteralPath '' } | Should Throw\n   at <ScriptBlock>, Y:\\Agent Skills\\Created\\batch-generation\\automation.Tests.ps1: line 24\n [+] passes exact native argv including quotes and empty strings 118ms\n [+] detects native nonzero exits explicitly 47ms\n [+] keeps an idempotent output unchanged on rerun 33ms\nTests completed in 642ms\nPassed: 3 Failed: 2 Skipped: 0 Pending: 0 Inconclusive: 0\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "name": "graph",
+      "skill": "visual-engineering-architect",
+      "status": "pass",
+      "detail": "DOT rendered to SVG/PNG; 3 nodes, 2 edges asserted; visual inspection recorded separately",
+      "seconds": 1.286,
+      "steps": [
+        {
+          "argv": [
+            "dot",
+            "-Tsvg",
+            "workflow.dot",
+            "-o",
+            "workflow.svg"
+          ],
+          "exit": 0,
+          "seconds": 0.815,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "dot",
+            "-Tpng",
+            "workflow.dot",
+            "-o",
+            "Y:\\Agent Skills\\Created\\batch-generation\\evidence\\graph.png"
+          ],
+          "exit": 0,
+          "seconds": 0.457,
+          "stdout": "",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "name": "site",
+      "skill": "documentation-site-engineer",
+      "status": "skip",
+      "reason": "MkDocs Python module unavailable; no site production build executed",
+      "seconds": 0.051,
+      "steps": [
+        {
+          "argv": [
+            "python",
+            "-m",
+            "mkdocs",
+            "--version"
+          ],
+          "exit": 1,
+          "seconds": 0.04,
+          "stdout": "",
+          "stderr": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\python.EXE: No module named mkdocs\n"
+        }
+      ]
+    },
+    {
+      "name": "sqlite",
+      "skill": "duckdb-sqlite-data-engineer",
+      "status": "pass",
+      "detail": {
+        "sqlite": "3.50.4",
+        "foreign_keys": true,
+        "rollback": true,
+        "indexed_lookup": true,
+        "migration": true,
+        "idempotent_upsert": true,
+        "backup_restore": true,
+        "csv": true
+      },
+      "seconds": 0.046,
+      "steps": []
+    },
+    {
+      "name": "duckdb",
+      "skill": "duckdb-sqlite-data-engineer",
+      "status": "fail",
+      "reason": "AssertionError: duckdb exit 1: Parser Error: syntax error at or near \"rows\"\n\nLINE 5: SELECT count(*) rows, sum(amount) total, min(code) first_code FROM read_par...\n                        ^\n",
+      "seconds": 0.08,
+      "steps": [
+        {
+          "argv": [
+            "duckdb",
+            "fixture.duckdb",
+            "-json",
+            "-c",
+            "CREATE TABLE staged AS SELECT * FROM read_csv('fixture.csv', header=true, all_varchar=true);\nCREATE TABLE clean AS SELECT DISTINCT code, CAST(amount AS INTEGER) amount FROM staged;\nBEGIN; INSERT INTO clean VALUES('rollback', 99); ROLLBACK;\nCOPY (SELECT * FROM clean ORDER BY code) TO 'roundtrip.parquet' (FORMAT PARQUET);\nSELECT count(*) rows, sum(amount) total, min(code) first_code FROM read_parquet('roundtrip.parquet');"
+          ],
+          "exit": 1,
+          "seconds": 0.066,
+          "stdout": "",
+          "stderr": "Parser Error: syntax error at or near \"rows\"\n\nLINE 5: SELECT count(*) rows, sum(amount) total, min(code) first_code FROM read_par...\n                        ^\n"
+        }
+      ]
+    },
+    {
+      "name": "archaeology",
+      "skill": "repository-archaeologist",
+      "status": "pass",
+      "detail": "Fixture inventory/import chain/stale README exposed by read-only searches; source hashes unchanged. Agent reconstruction not evaluated.",
+      "seconds": 0.232,
+      "steps": [
+        {
+          "argv": [
+            "git",
+            "init",
+            "-q"
+          ],
+          "exit": 0,
+          "seconds": 0.064,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "status",
+            "--short"
+          ],
+          "exit": 0,
+          "seconds": 0.038,
+          "stdout": "?? README.md\n?? data.json\n?? package.json\n?? src/\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "rg",
+            "--files",
+            "-g",
+            "!.git"
+          ],
+          "exit": 0,
+          "seconds": 0.023,
+          "stdout": "src\\service.js\nsrc\\main.js\nREADME.md\npackage.json\ndata.json\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "rg",
+            "-n",
+            "service|legacy|src/main",
+            "src",
+            "README.md",
+            "package.json"
+          ],
+          "exit": 0,
+          "seconds": 0.019,
+          "stdout": "package.json:1:{\"scripts\":{\"start\":\"node src/main.js\"}}\nREADME.md:1:Entry point: legacy.js\nsrc\\main.js:1:const service = require('./service'); console.log(service.read());\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "name": "receipt",
+      "skill": "desktop-release-installer-engineer",
+      "status": "pass",
+      "detail": "Receipt TOML roundtrip and checksum mismatch detection only; no installer built, signed or installed",
+      "seconds": 0.011,
+      "steps": []
+    },
+    {
+      "name": "retrieval",
+      "skill": "local-ai-retrieval-engineer",
+      "status": "pass",
+      "detail": {
+        "baseline": "SQLite FTS5; no embeddings or generation",
+        "recall_at_3": 1.0,
+        "mrr": 1.0,
+        "corpus_passages": 3,
+        "judged_queries": 1,
+        "no_match": true,
+        "update_delete": true,
+        "dimension_contract_fixture": true,
+        "citations_and_model_abstention": "not evaluated"
+      },
+      "seconds": 0.003,
+      "steps": []
+    },
+    {
+      "name": "ollama-probe",
+      "skill": "local-ai-retrieval-engineer",
+      "status": "pass",
+      "detail": {
+        "models": 27,
+        "inference": "not requested"
+      },
+      "seconds": 0.764,
+      "steps": []
+    }
+  ]
+}

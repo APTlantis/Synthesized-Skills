@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "documentation-site-engineer"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Build a documentation website"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Repair docs navigation and routes"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Configure MkDocs Material search"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Convert one DOCX"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Mirror a docs website"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Build a transactional web application"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Build two-page site with code, image and search"
+expected = "Production build, nav, links, assets and search index work"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Move a nested page under a deployed subpath"
+expected = "Redirects, deep links, anchors and base-aware assets work"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Generator or search provider is absent"
+expected = "Finish source inspection and mark build/search execution pending"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Publish normalized captured Markdown"
+expected = "Ingestion acquires; site engineer owns publication structure"
+status = "not-run"

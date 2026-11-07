@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "repository-archaeologist"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Map an inherited application"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Locate true entrypoint and stale docs"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Assess change impact in an unfamiliar repo"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Fix a known typo"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Run a release build only"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Explain a self-contained function"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Inspect repo with manifest, service, data and stale README"
+expected = "Identify real import chain and cite documentation mismatch"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Trace service change through callers/tests/config"
+expected = "Evidence-backed fan-out/test plan without writes"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "History, submodule or runtime evidence is absent"
+expected = "Label uncertainty and continue with accessible source"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Pass findings to a Tauri implementation"
+expected = "Reconnaissance remains read-only; implementation owns edits"
+status = "not-run"

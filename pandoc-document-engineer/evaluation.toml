@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "pandoc-document-engineer"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Convert Markdown to DOCX with Pandoc"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Write a Pandoc Lua filter"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Debug images missing after Pandoc conversion"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Design site navigation"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Crawl a documentation website"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Edit prose without conversion"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Convert Markdown to HTML/DOCX and roundtrip"
+expected = "Assert structure, metadata, code and image preservation"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Apply a Lua filter and HTML template"
+expected = "Assert transformed heading, title and retained body"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "AsciiDoc reader or PDF engine is missing"
+expected = "Query installed support and use a checked bridge or report unavailable route"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Transform a captured page for publication"
+expected = "Ingestion acquires, Pandoc transforms, site skill publishes"
+status = "not-run"

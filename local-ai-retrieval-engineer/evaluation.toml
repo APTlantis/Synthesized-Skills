@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "local-ai-retrieval-engineer"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Build local Ollama retrieval"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Debug incompatible embeddings"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Evaluate chunking and citation grounding"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Explain AI generally"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Rewrite an ordinary chat prompt"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Optimize a database-only query"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Evaluate known answers, distractors and no-answer questions"
+expected = "Judgment-based ranking; citations resolve; unsupported answers abstain"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Change/delete sources and embedding model"
+expected = "Remove stale chunks; reject incompatible contract; recover failed refresh"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Ollama server/model is unavailable"
+expected = "Report failure and continue offline work without downloading"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Store an index in DuckDB/SQLite"
+expected = "Storage skill owns integrity; this skill owns retrieval contract"
+status = "not-run"

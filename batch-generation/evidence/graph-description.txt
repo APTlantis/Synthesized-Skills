@@ -1,0 +1,1 @@
+Editable source flows to Render and inspect, which produces artifact. Three nodes and two directed edges.

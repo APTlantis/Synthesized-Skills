@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "powershell-automation-engineer"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Build a PowerShell module"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Fix script native argument handling"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Make file automation idempotent"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Run one existing FFprobe command"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Design a SQL schema"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Explain Bash arrays"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Pipeline literal special-character paths through an advanced function"
+expected = "Preserve object cardinality and paths; reject invalid input"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Pass exact argv, detect failure and rerun a write"
+expected = "Argument equality, nonzero detection and unchanged second-run output"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Native process fails inside try/catch"
+expected = "Inspect immediate native exit code and propagate failure"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Orchestrate ImageMagick jobs"
+expected = "PowerShell owns processes; ImageMagick owns pixels"
+status = "not-run"

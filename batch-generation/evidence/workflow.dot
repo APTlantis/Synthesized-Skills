@@ -1,0 +1,1 @@
+digraph delivery { rankdir=LR; source [label="Editable source"]; render [label="Render and inspect"]; source -> render -> artifact; }

@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "desktop-release-installer-engineer"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Produce a Windows installer candidate"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Audit artifact signing and versions"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Prepare an AppImage release receipt"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Implement an app command"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Refactor Rust modules"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Review a UI palette"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Build explicitly selected installer targets"
+expected = "Fresh format, identity, version and architecture verified"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Install, upgrade and uninstall disposable app"
+expected = "Lifecycle/data retention verified and final hashes/receipt match"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Signing identity or native VM is absent"
+expected = "Label unsigned/uninstalled candidate and report exact open gate"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Package a Tauri application"
+expected = "Application construction and distribution evidence remain separate"
+status = "not-run"

@@ -1,0 +1,153 @@
+{
+  "status": "pass",
+  "packages": [
+    {
+      "name": "ffmpeg-media-engineer",
+      "status": "pass",
+      "core_lines": 30,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "pandoc-document-engineer",
+      "status": "pass",
+      "core_lines": 31,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "imagemagick-imaging-engineer",
+      "status": "pass",
+      "core_lines": 29,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "powershell-automation-engineer",
+      "status": "pass",
+      "core_lines": 28,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "visual-engineering-architect",
+      "status": "pass",
+      "core_lines": 29,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "documentation-site-engineer",
+      "status": "pass",
+      "core_lines": 29,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "documentation-ingestion-mirroring",
+      "status": "pass",
+      "core_lines": 31,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "rust-tauri-app-architect",
+      "status": "pass",
+      "core_lines": 29,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "desktop-release-installer-engineer",
+      "status": "pass",
+      "core_lines": 29,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "repository-archaeologist",
+      "status": "pass",
+      "core_lines": 29,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "duckdb-sqlite-data-engineer",
+      "status": "pass",
+      "core_lines": 29,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    },
+    {
+      "name": "local-ai-retrieval-engineer",
+      "status": "pass",
+      "core_lines": 31,
+      "cases": {
+        "positive": 3,
+        "negative": 3,
+        "execution": 2,
+        "recovery": 1,
+        "integration": 1
+      }
+    }
+  ],
+  "existing_files_checked": 47,
+  "preserved_files_changed": [],
+  "problems": [],
+  "limits": "Checks package structure and plan counts only; does not evaluate activation, technical completeness, or runtime behavior."
+}

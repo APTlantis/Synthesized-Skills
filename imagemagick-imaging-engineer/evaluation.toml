@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "imagemagick-imaging-engineer"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Resize images with magick"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Extract an ImageMagick histogram"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Fix ImageMagick alpha compositing"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Define brand voice"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Draw an editable vector icon"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Generate a photorealistic scene"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Resize and crop generated images"
+expected = "Identify exact sizes and format"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Composite alpha, reduce palette and repeat output"
+expected = "Assert pixels, colorspace, histogram, palette bounds and determinism"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Delegate or policy denies an input format"
+expected = "Inspect capability and use an approved route without global policy weakening"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Process canonical brand assets"
+expected = "Brand system owns semantics; image skill produces derivatives"
+status = "not-run"

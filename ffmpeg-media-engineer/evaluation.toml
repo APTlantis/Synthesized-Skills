@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "ffmpeg-media-engineer"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Remux an MKV with selected streams"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Normalize audio with FFmpeg"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Debug an FFmpeg filter graph"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Recommend a media player"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Copy movies unchanged"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Discuss screenplay editing"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Probe and remux generated A/V media"
+expected = "Check stream count/codecs, metadata and decode output"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Scale video and convert audio"
+expected = "Assert dimensions, duration tolerance and audio format"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Hardware encoder is unavailable"
+expected = "Capture error, inspect build/device and reverify an acceptable CPU fallback"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Build a reusable FFmpeg batch script"
+expected = "PowerShell owns orchestration; FFmpeg owns streams"
+status = "not-run"

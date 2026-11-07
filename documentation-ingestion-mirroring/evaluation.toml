@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "documentation-ingestion-mirroring"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Mirror an authorized documentation subtree"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Refresh an offline collection"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Reconstruct local document and image links"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Read one web page"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Design a docs theme"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Convert one local DOCX"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Capture a bounded fixture with tangent links and redirect escapes"
+expected = "Only authorized origin/path fetched; aliases deduplicated; no escape writes"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Refresh ETags and rebuild local references"
+expected = "304 reuses content; code/frontmatter and offline page/assets preserved"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Fetch fails or SiYuan import is unknown"
+expected = "Retain good prior content; report missing page/native import gap"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Transform captured HTML using Pandoc"
+expected = "Ingestion owns scope/provenance/map; Pandoc owns conversion"
+status = "not-run"

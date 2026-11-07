@@ -1,0 +1,73 @@
+# Agent trial plan; package lint/tool smoke tests are separate evidence.
+schema_version = 1
+skill = "duckdb-sqlite-data-engineer"
+
+[[cases]]
+id = "positive-1"
+kind = "positive"
+prompt = "Design a SQLite migration"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-2"
+kind = "positive"
+prompt = "Ingest CSV and export DuckDB Parquet"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "positive-3"
+kind = "positive"
+prompt = "Debug engine-specific locking or plans"
+expected = "Activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-1"
+kind = "negative"
+prompt = "Teach generic SQL"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-2"
+kind = "negative"
+prompt = "Tune PostgreSQL"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "negative-3"
+kind = "negative"
+prompt = "Evaluate embedding relevance"
+expected = "Do not activate this skill"
+status = "not-run"
+
+[[cases]]
+id = "execution-1"
+kind = "execution"
+prompt = "Create, ingest, rollback, migrate and back up SQLite"
+expected = "Assert counts, constraints, query plan, restore and integrity"
+status = "not-run"
+
+[[cases]]
+id = "execution-2"
+kind = "execution"
+prompt = "Stage CSV in DuckDB and roundtrip Parquet"
+expected = "IDs, aggregates, rollback, dedup and reimport preserved"
+status = "not-run"
+
+[[cases]]
+id = "recovery-1"
+kind = "recovery"
+prompt = "Extension or newer SQL syntax is absent"
+expected = "Check engine/version and select a supported route"
+status = "not-run"
+
+[[cases]]
+id = "integration-1"
+kind = "integration"
+prompt = "Persist retrieval chunks"
+expected = "Database owns SQL integrity; AI owns model/relevance compatibility"
+status = "not-run"
