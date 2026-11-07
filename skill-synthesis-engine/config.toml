@@ -1,0 +1,37 @@
+
+[engine]
+name = "agent-skill-author"
+default_profile = "standard"
+output_format = "agent-skills"
+
+[authoring]
+prefer_concise_instructions = true
+progressive_disclosure = true
+allow_supporting_files = true
+avoid_unnecessary_dependencies = true
+max_skill_lines = 500
+
+[research]
+prefer_official_sources = true
+track_provenance = true
+verify_commands_when_possible = true
+preserve_unresolved_conflicts = true
+
+[validation]
+structural_checks = true
+behavioral_checks = true
+positive_trigger_tests = 3
+negative_trigger_tests = 3
+require_execution_evidence = false
+
+[environment]
+primary_os = "windows"
+secondary_os = "linux"
+prefer_local_tools = true
+preferred_config_format = "toml"
+
+[packaging]
+include_references_when_needed = true
+include_scripts_when_needed = true
+include_assets_when_needed = true
+generate_empty_directories = false

@@ -1,0 +1,8 @@
+stateDiagram-v2
+    accTitle: Review lifecycle
+    accDescr: A draft moves into review, may return for changes, and becomes final when approved.
+    [*] --> Draft
+    Draft --> Reviewing: Submit
+    Reviewing --> Draft: Request changes
+    Reviewing --> Approved: Approve
+    Approved --> [*]

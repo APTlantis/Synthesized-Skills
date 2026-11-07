@@ -1,0 +1,17 @@
+sequenceDiagram
+    accTitle: Cached document lookup
+    accDescr: A client asks a service for a document. The service checks its cache and fetches from storage only on a cache miss.
+    actor Client
+    participant Service
+    participant Cache
+    participant Store
+    Client->>Service: Get document
+    Service->>Cache: Look up document
+    alt Cache hit
+        Cache-->>Service: Cached document
+    else Cache miss
+        Cache-->>Service: Not found
+        Service->>Store: Read document
+        Store-->>Service: Document
+    end
+    Service-->>Client: Document

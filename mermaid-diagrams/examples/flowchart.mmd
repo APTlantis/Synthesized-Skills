@@ -1,0 +1,8 @@
+flowchart TD
+    accTitle: Request review workflow
+    accDescr: Complete requests proceed to review; incomplete requests return for details before another completeness check.
+    received["Receive request"] --> complete{"Details complete?"}
+    complete -->|Yes| review["Review request"]
+    complete -->|No| clarify["Request missing details"]
+    clarify --> complete
+    review --> finished["Record decision"]

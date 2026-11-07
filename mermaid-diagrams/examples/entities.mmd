@@ -1,0 +1,12 @@
+erDiagram
+    accTitle: Accounts and sessions
+    accDescr: Each session belongs to exactly one account. An account may have zero or more sessions. The relationship is non-identifying because the session has its own primary key.
+    ACCOUNT ||..o{ SESSION : owns
+    ACCOUNT {
+        int account_id PK
+        string display_name
+    }
+    SESSION {
+        int session_id PK
+        int account_id FK
+    }

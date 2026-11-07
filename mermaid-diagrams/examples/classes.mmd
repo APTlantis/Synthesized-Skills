@@ -1,0 +1,13 @@
+classDiagram
+    accTitle: Document ownership model
+    accDescr: A document owns zero or more revisions. A Markdown document specializes a document.
+    class Document {
+        +String title
+        +publish()
+    }
+    class MarkdownDocument
+    class Revision {
+        +String content
+    }
+    Document <|-- MarkdownDocument
+    Document "1" *-- "0..*" Revision : owns
