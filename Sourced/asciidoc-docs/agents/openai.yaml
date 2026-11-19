@@ -1,0 +1,14 @@
+interface:
+  display_name: AsciiDoc Docs
+  short_description: Write, render, and publish AsciiDoc docs
+  default_prompt: Use $asciidoc-docs to write or convert technical documentation and
+    validate the intended Asciidoctor or Antora output.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
